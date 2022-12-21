@@ -7,3 +7,18 @@ class Post(db.Model):
     title = db.Column(db.String(100))
     content = db.Column(db.Text)
     date_created = db.Column(db.DateTime, default=datetime.datetime.utcnow)
+
+    def __repr__(self) -> str:
+        return self.title
+
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(30), unique=True, nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+    password = db.Column(db.String(120), nullable=False)
+
+    def __repr__(self) -> str:
+        return self.username
+
+    

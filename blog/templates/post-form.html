@@ -5,22 +5,22 @@
     <div class='col-5 mx-auto'>
         <div class='form-control d-flex justify-content-center'>
             <form method="POST">
-                <div class="m-3"><h3>Login</h3></div>
+                <div class="m-3"><h3>Post</h3></div>
                 <hr>
                 {% if form %}
                     {{ form.hidden_tag() }}
 
                     <div class="m-3">
-                        <span>{{ form.email.label }}:</span>
-                        {{ form.email }}
+                        {{ form.title.label }}:
+                        {{ form.title }}
                     </div>
 
                     <div class="m-3">
-                        <span>{{ form.password.label }}:</span>
-                        {{ form.password }}
+                        {{ form.content.label }}:
+                        {{ form.content }}
                     </div>
-                    <input class="btn btn-primary" type='submit' value='Login'>  
-                      
+                    <input class="btn btn-primary" type='submit' value='Submit'>
+
                 {% endif%}
             </form>
         </div>

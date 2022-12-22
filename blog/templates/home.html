@@ -6,12 +6,14 @@
     <div class="col-6 mx-auto" id="posts">
         {% for post in posts %}
         <div class="card m-3">
-            <img src="#" class="card-img-top" alt="...">
+            <img src="{{ url_for('static', filename='img/default_image.png') }}" class="card-img-top" alt="...">
             <div class="card-body">
-                <a href="{{ url_for('post_detail', id=post.id) }}">
+                <small> Author: {{ post.user.username }} on {{ post.date_created.date() }}</small>
+                <hr>
+                <a href="{{ url_for('post_detail', post_id=post.id) }}">
                     <h5 class="card-title">{{ post.title}}</h5>
                 </a>
-                <p class="card-text">{{ post.content }}</p>
+                <p class="card-text">{{ post.content | truncate(30) }}</p>
             </div>
         </div>
         {% endfor %}

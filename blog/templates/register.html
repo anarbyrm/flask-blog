@@ -2,25 +2,30 @@
 
 {% block content %}
 <div class="row">
-    <div class='col-6 mx-auto'>
-        <div class='form-control'>
+    <div class='col-5 mx-auto'>
+        <div class='form-control d-flex justify-content-center'>
             <form method="POST">
-                <legend>Register</legend>
+                <div class="m-3"><h3>Register</h3></div>
+                <hr>
                 {% if form %}
                     {{ form.hidden_tag() }}
                     <div class="m-3">
+                        {{ form.username.label }}:
                         {{ form.username }}
                     </div>
 
                     <div class="m-3">
+                        {{ form.email.label }}:
                         {{ form.email }}
                     </div>
 
                     <div class="m-3">
+                        {{ form.password.label }}:
                         {{ form.password }}
                     </div>
 
                     <div class="m-3">
+                        {{ form.password_confirm.label }}:
                         {{ form.password_confirm }}
                     </div>
                     <input class="btn btn-primary" type='submit' value='Register'>    

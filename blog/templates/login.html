@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class='col-6 mx-auto'>
+        <div class='form-control'>
+            <form method="POST">
+                <legend>Login</legend>
+                {% if form %}
+                    {{ form.hidden_tag() }}
+
+                    <div class="m-3">
+                        {{ form.email }}
+                    </div>
+
+                    <div class="m-3">
+                        {{ form.password }}
+                    </div>
+                    <input class="btn btn-primary" type='submit' value='Login'>  
+                      
+                {% endif%}
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
